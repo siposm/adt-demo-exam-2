@@ -32,6 +32,9 @@ namespace tweets
                     Console.WriteLine(tw);
                 }
             }
+
+            IEnumerable<User> users = UserTweetManager.XMLReader();
+            ; // check status with breakpoint here
         }
     }
 }
