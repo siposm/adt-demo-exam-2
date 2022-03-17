@@ -34,6 +34,10 @@ namespace tweets
                 }
             }
 
+            UserTweetManager.GetUsersWithTweetCount(db);
+            UserTweetManager.AverageTweetLengthByFlag(db);
+            UserTweetManager.SumOfTweetYearsByFlag(db);
+            UserTweetManager.GetTweetNumberForMailType(db);
 
         }
     }
