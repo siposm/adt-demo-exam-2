@@ -16,6 +16,9 @@ namespace tweets
         [Key]
         public int Id { get; set; }
         public string UserName { get; set; }
+        
+        [Required]
+        [ContainsCharacter("@.")]
         public string UserEmail { get; set; }
         public virtual ICollection<Tweet> Tweets { get; set; }
 
