@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace tweets
 {
@@ -9,32 +10,31 @@ namespace tweets
         {
             UserTweetContext db = new UserTweetContext();
             
-            User u = new User();
-            u.UserName = "test_user";
-            u.UserEmail = "test@mail.com";
-            u.Tweets = new List<Tweet>();
-            u.Tweets.Add(new Tweet()
+            List<User> users = UserTweetManager.XMLReader().ToList();
+
+            foreach (var user in users)
             {
-                Content = "asdasdasd",
-                Flagged = true,
-                Year = 2022
-            });
-
-            db.Users.Add(u);
-
+                if(Validator.UserEmailValidator(nameof(user.UserEmail), user))
+                {
+                    db.Users.Add(user);
+                }
+                else
+                {
+                    Console.WriteLine($"{user} was not fulfilled the requiremenets!");
+                }
+            }
             db.SaveChanges();
 
-            foreach (var item in db.Users)
+            foreach (var user in db.Users)
             {
-                Console.WriteLine(item);
-                foreach (var tw in item.Tweets)
+                Console.WriteLine(user);
+                foreach (var tweet in user.Tweets)
                 {
-                    Console.WriteLine(tw);
+                    Console.WriteLine("   " + tweet);
                 }
             }
 
-            IEnumerable<User> users = UserTweetManager.XMLReader();
-            ; // check status with breakpoint here
+
         }
     }
 }
