@@ -11,18 +11,23 @@ namespace tweets
     {
         public static bool UserEmailValidator<T>(string propName, T obj)
         {
-            PropertyInfo property = obj.GetType().GetProperty(propName);
-
-            ContainsCharacterAttribute cca = property.GetCustomAttributes(typeof(ContainsCharacterAttribute), false).SingleOrDefault() as ContainsCharacterAttribute;
-
-            string propertyContent = property.GetValue(obj).ToString();
-
-            foreach (char character in cca.CharactersToBeChecked)
+            Func<string, T, bool> validate = (_propName, _obj) =>
             {
-                if (!propertyContent.Contains(character))
-                    return false;
-            }
-            return true;
+                PropertyInfo property = obj.GetType().GetProperty(propName);
+
+                ContainsCharacterAttribute cca = property.GetCustomAttributes(typeof(ContainsCharacterAttribute), false).SingleOrDefault() as ContainsCharacterAttribute;
+
+                string propertyContent = property.GetValue(obj).ToString();
+
+                foreach (char character in cca.CharactersToBeChecked)
+                {
+                    if (!propertyContent.Contains(character))
+                        return false;
+                }
+                return true;
+            };
+
+            return validate(propName, obj);            
         }
     }
 }
