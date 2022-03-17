@@ -6,7 +6,7 @@ namespace tweets
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\UserTweets.mdf;Integrated Security=True
         }
     }
 }
