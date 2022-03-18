@@ -2,6 +2,7 @@
 
 ```
     Sipos Miklos
+    © siposm
     2022
 ```
 
@@ -86,8 +87,8 @@ Create a **single-layer** console application based on the following tasks.
 - In the `UserTweetManager` class create the following methods and queries.
 - Remarks:
     - All methods should use the database as the source, so pass the `UserTweetContext` as parameter.
-    - For this moment, all methods can return `IEnumerable<object>` referenced collection, but **this is not advised** in real projects! Always create Entity/DTO classes for these purposes as well and use them instead!
-- Create the following queries:
+    - For this moment, all methods can return `IEnumerable<object>` referenced collection, but **this is not advised** in real projects! Always create dedicated Entity or DTO classes for these purposes as well and use them instead!
+- Create the following methods and implement the queries inside:
     - `GetUsersWithHotmailAccount`
         - select the usernames of those who has hotmail email addresses. Convert their usernames to uppercase format.
     - `GetUsersWithAtLeastOneOldTweet`
