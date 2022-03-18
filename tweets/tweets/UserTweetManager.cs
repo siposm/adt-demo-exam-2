@@ -41,6 +41,26 @@ namespace tweets
         // !!!
         // returning 'object' is ONLY NOW ACCEPTABLE, otherwise should use explicitely made classes!!!
         // !!!
+        public static IEnumerable<object> GetUsersWithHotmailAccount(UserTweetContext db)
+        {
+            var q = from x in db.Users
+                    where x.UserEmail.Contains("hotmail")
+                    select x.UserName.ToUpper();
+
+            return q;
+        }
+
+        public static IEnumerable<object> GetUsersWithAtLeastOneOldTweet(UserTweetContext db)
+        {
+            // old tweet means it was created before 2010
+
+            var q = (from x in db.Tweets
+                         where x.Year < 2010
+                         select x.User).Distinct();
+
+            return q;
+        }
+
         public static IEnumerable<object> GetUsersWithTweetCount(UserTweetContext db)
         {
             var q = from x in db.Users
@@ -81,7 +101,7 @@ namespace tweets
 
         public static IEnumerable<object> GetTweetNumberForMailType(UserTweetContext db)
         {
-            // tolist needed unfortunately...
+            // ToList needed unfortunately... because EF is not able to handle otherwise the split part
             // or alternatively: group x by x.UserEmail.Substring(x.UserEmail.IndexOf('@')) into g
 
             var q = from x in db.Users.ToList()
