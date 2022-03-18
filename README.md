@@ -1,8 +1,8 @@
 # Advanced Development Techniques Demo Exam #2
 
 ```
-Sipos Miklos
-2022
+    Sipos Miklos
+    2022
 ```
 
 Create a **single-layer** console application based on the following tasks.
@@ -10,11 +10,11 @@ Create a **single-layer** console application based on the following tasks.
 ## Database creation
 - Create a service-based database and name it `UserTweers`.
 - Create the corresponding tables / entity classes using code-first approach like:
-    - User
+    - `User`
         - `int Id` - (auto-incremented primary key)
         - `string UserName` - the user's username
         - `string UserEmail` - the user's email address
-    - Tweet
+    - `Tweet`
         - `int Id` - (auto-incremented primary key)
         - `string Content` - the tweet's text content
         - `bool Flagged` - tweet is flagged / marked for any reason or not
@@ -30,7 +30,26 @@ Create a **single-layer** console application based on the following tasks.
 - Test the so far created functions from the Main method.
 
 ## XML processing
-- Create a `UserTweetManager` class which will be responsible to read the XML file provided, process it and thus create entities. Image this as an API endpoint which is called whenever the program starts, so it fetches the latest records for us.
+- Create a `UserTweetManager` class which will be responsible to read the XML file provided, process it and thus create entities. Suppose that this as an API endpoint which is called whenever the program starts, so it fetches the latest records for us.
+- The `User` and `Tweet` entities, and their one-to-many relationship corresponds to the XML sceheme:
+    ```xml
+    <User>
+        <UserName>woddywatermelonmir</UserName>
+        <UserEmail>woddywat@hotmail.net</UserEmail>
+        <Tweets>
+            <Tweet>
+                <Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Content>
+                <Flagged>true</Flagged>
+                <Year>2009</Year>
+            </Tweet>
+            <Tweet>
+                <Content>Nulla tempus orci sem, ac laoreet justo faucibus quis.</Content>
+                <Flagged>false</Flagged>
+                <Year>2018</Year>
+            </Tweet>
+        </Tweets>
+    </User>
+    ```
 - Create a `XMLReader` named static method inside which will return `IEnumerable<User>` referenced collection.
 - Inside this method, create a `Func` delegate which takes a `string` parameter (this will be the web URL for the XML file) and returns an `IEnumerable<User>` referenced collection.
 - Process the xml inside this delegate and create the user and tweet entities, return them.
