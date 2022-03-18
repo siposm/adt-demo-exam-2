@@ -82,3 +82,9 @@ Create a **single-layer** console application based on the following tasks.
     - `GetTweetNumberForMailType`
         - count how many tweets are created for each mail type. By mail type we mean the domain endings in the users' email like `@something.com` or `@hotmail.net`.
 - Call the methods from the main method.
+
+## Unit testing LINQ queries
+- Create a separate DLL to handle unit testing with the name of `Testing` for the project and `LinqTests` name for the class.
+- Create an Init method which will run exactly one time before all the tests to initialize the starting state. This includes the creation of the database, reading the xml and saving the records to the database after validation (just like it was made in the main function!).
+- Create a test named `Test_GetUsersWithHotmailAccount_FromDbReturnsTwo` which will check if the `GetUsersWithHotmailAccount` method returns exactly 2 records.
+- Create a test named `Test_GetUsersWithAtLeastOneOldTweet_ReturnsWithoutDuplicates` which will check if the `GetUsersWithAtLeastOneOldTweet` method returns exactly 3 records. For this, use a TestCase with the value 3 and check via variable.
