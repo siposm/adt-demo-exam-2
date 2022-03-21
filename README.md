@@ -80,7 +80,7 @@ Create a **single-layer** console application based on the following tasks.
 - Call the delegate from the method, and return the output.
 
 ## Testing
-- Loop through the elements and validate all of them using the UserEmailValidator. If the user's email was valid, save it to the database; otherwise write out to the console that the user was not fulfilled the requiremenets.
+- Loop through the elements and validate all of them using the `UserEmailValidator`. If the user's email was valid, save it to the database; otherwise write out to the console that the user was not fulfilled the requiremenets.
 - Loop through the items (queried from the database!) and write out the user's and their tweets.
 
 ## LINQ data querying
@@ -98,7 +98,7 @@ Create a **single-layer** console application based on the following tasks.
     - `AverageTweetLengthByFlag`
         - calculate what is the average length of the tweets for the flagged ones and non-flagged ones (flagged status can be groupped). Use anonymous class with `IsFlagged` and `AverageLength` properties.
     - `SumOfTweetYearsByFlag`
-        - sum the year of the tweets in the flagged and non-flagged groups. Use anonymous class with `IsFlagged` and `SumYears` properties.
+        - sum up the year values of the tweets in the flagged and non-flagged groups. Use anonymous class with `IsFlagged` and `SumYears` properties.
     - `GetTweetNumberForMailType`
         - count how many tweets are created for each mail type. By mail type we mean the domain endings in the users' email like `@something.com` or `@hotmail.net`.
 - Create custom extension method to process the LINQ queries' output. Create a class named `Operations` and inside a generic method named `ToConsole`.
@@ -106,6 +106,6 @@ Create a **single-layer** console application based on the following tasks.
 
 ## Unit testing LINQ queries
 - Create a separate DLL to handle unit testing with the name of `Testing` for the project and `LinqTests` name for the class.
-- Create an Init method which will run exactly one time before all the tests to initialize the starting state. This includes the creation of the database, reading the xml and saving the records to the database after validation (just like it was made in the main function!).
+- Create an `Init` method which will run exactly one time before all the tests to initialize the starting state. This includes the creation of the database, reading the xml and saving the records to the database after validation (just like it was made in the main function!).
 - Create a test named `Test_GetUsersWithHotmailAccount_FromDbReturnsTwo` which will check if the `GetUsersWithHotmailAccount` method returns exactly 2 records.
 - Create a test named `Test_GetUsersWithAtLeastOneOldTweet_ReturnsWithoutDuplicates` which will check if the `GetUsersWithAtLeastOneOldTweet` method returns exactly 3 records. For this, use a TestCase with the value 3 and check via variable.
