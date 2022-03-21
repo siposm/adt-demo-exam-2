@@ -26,9 +26,9 @@ Create a **single-layer** console application based on the following tasks.
 - Add data annotation to the `User` class so the `UserEmail` property is required.
 - Add navigation properties to both classes to create a **one-to-many** relation between the two. One user can have any number of tweets.
 - Create the corresponding `UserTweetContext` class.
-    - enable lazyloading
-    - define the one-to-many relation between the two entities with the Fluent API in `OnModelCreating`
-- Test the so far created functions from the Main method.
+    - Enable lazyloading.
+    - Define the one-to-many relation between the two entities with the Fluent API in `OnModelCreating`.
+- Test the so far created functions from the `Main` method.
 
 ## XML processing
 - Create a `UserTweetManager` class which will be responsible to read the XML file provided, process it and thus create entities. Suppose that this as an API endpoint which is called whenever the program starts, so it fetches the latest records for us.
@@ -53,7 +53,7 @@ Create a **single-layer** console application based on the following tasks.
     ```
 - Create a `XMLReader` named static method inside which will return `IEnumerable<User>` referenced collection.
 - Inside this method, create a `Func` delegate which takes a `string` parameter (this will be the web URL for the XML file) and returns an `IEnumerable<User>` referenced collection.
-- Process the xml inside this delegate and create the user and tweet entities, return them.
+- Process the xml inside this delegate, create the user and tweet entities and return them.
 - Call the delegate from the method, and return the collection.
 
 ## Testing
