@@ -15,4 +15,5 @@ namespace tweets
             Console.WriteLine($"************* {header} ************\n");
         }
     }
+    // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries
 }
