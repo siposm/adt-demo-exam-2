@@ -34,12 +34,12 @@ namespace tweets
                 }
             }
 
-            UserTweetManager.GetUsersWithHotmailAccount(db);
-            UserTweetManager.GetUsersWithAtLeastOneOldTweet(db);
-            UserTweetManager.GetUsersWithTweetCount(db);
-            UserTweetManager.AverageTweetLengthByFlag(db);
-            UserTweetManager.SumOfTweetYearsByFlag(db);
-            UserTweetManager.GetTweetNumberForMailType(db);
+            UserTweetManager.GetUsersWithHotmailAccount(db).ToConsole("Q1");
+            UserTweetManager.GetUsersWithAtLeastOneOldTweet(db).ToConsole("Q2"); ;
+            UserTweetManager.GetUsersWithTweetCount(db).ToConsole("Q3");;
+            UserTweetManager.AverageTweetLengthByFlag(db).ToConsole("Q4");;
+            UserTweetManager.SumOfTweetYearsByFlag(db).ToConsole("Q5");;
+            UserTweetManager.GetTweetNumberForMailType(db).ToConsole("Q6");;
 
         }
     }
