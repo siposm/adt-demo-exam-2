@@ -101,7 +101,8 @@ Create a **single-layer** console application based on the following tasks.
         - sum the year of the tweets in the flagged and non-flagged groups. Use anonymous class with `IsFlagged` and `SumYears` properties.
     - `GetTweetNumberForMailType`
         - count how many tweets are created for each mail type. By mail type we mean the domain endings in the users' email like `@something.com` or `@hotmail.net`.
-- Call the methods from the main method.
+- Create custom extension method to process the LINQ queries' output. Create a class named `Operations` and inside a generic method named `ToConsole`.
+- Call the methods from the main method and use the `ToConsole` method to display the results on the console.
 
 ## Unit testing LINQ queries
 - Create a separate DLL to handle unit testing with the name of `Testing` for the project and `LinqTests` name for the class.
