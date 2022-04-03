@@ -65,7 +65,7 @@ Create a **single-layer** console application based on the following tasks.
 - Define a constructor in this class which takes a `string` parameter, as an array of characters. Create a property in the class, assign the constructor parameter to it.
 - Add restriction so that this attribute can only be placed on properties.
 - Apply the attribute to the `User`'s `UserEmail` property and add `@` and `.` characters.
-    - So the aim will be to check via validation if the `UserEmail` contains all the given characters, both `@` symbol and `.` (at) symbol.
+    - So the aim will be to check via validation if the `UserEmail` contains all the given characters, both `@` (at) symbol and `.` (dot) symbol.
 
 ## Validation using reflection
 - Create a class named `Validator`.
