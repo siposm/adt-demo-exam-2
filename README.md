@@ -6,6 +6,13 @@
     2022
 ```
 
+## Detailed video explanation
+Can be found here on my YouTube channel: https://youtu.be/t89p0l6p0TM
+
+<br><br><br><br><br>
+
+# Exercise
+
 Create a **single-layer** console application based on the following tasks.
 
 ## Database creation
